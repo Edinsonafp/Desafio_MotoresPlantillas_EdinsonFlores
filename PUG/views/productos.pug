@@ -1,0 +1,16 @@
+extends layout
+
+block medidor 
+    h1="Tabla de productos"
+    a(href="/productos/form", style=("background-color: #4CAF50;border: none;  color: white;  padding: 15px 32px;  text-align: center;  text-decoration: none;  display: inline-block;  font-size: 16px;  margin: 4px 2px;  cursor: pointer;")) Agregar Producto
+    table(style="font-family: Arial, Helvetica, sans-serif;border-collapse: collapse;width: 100%;")
+        tr
+            th(style="border: 1px solid #ddd;padding: 8px;padding-top: 12px;  padding-bottom: 12px;  text-align: left;  background-color: #04AA6D;  color: white;")="Titulo"
+            th(style="border: 1px solid #ddd;padding: 8px;padding-top: 12px;  padding-bottom: 12px;  text-align: left;  background-color: #04AA6D;  color: white;")="Precio"
+            th(style="border: 1px solid #ddd;padding: 8px;padding-top: 12px;  padding-bottom: 12px;  text-align: left;  background-color: #04AA6D;  color: white;")="Thumbnail"
+        each producto in productos
+            tr 
+                td(style="border: 1px solid #ddd;padding: 8px;") #{producto.title}
+                td(style="border: 1px solid #ddd;padding: 8px;") #{producto.price}
+                td(style="border: 1px solid #ddd;padding: 8px;") 
+                    img(src=producto.thumbnail alt='' style='width:100px; height:100px;')
